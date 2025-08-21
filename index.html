@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background: #f2f2f2;
+    }
+    h2 {
+      color: #333;
+    }
+    pre {
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h2>Result</h2>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // 1. Variables & Constants, Arithmetic
+    let name = prompt("Enter your name:");
+    let userNumber = Number(prompt("Enter a number:"));
+    const BASE_NUMBER = 10; // constant
+
+    let sum = BASE_NUMBER + userNumber;
+    let diff = BASE_NUMBER - userNumber;
+    let product = BASE_NUMBER * userNumber;
+    let quotient = BASE_NUMBER / userNumber;
+
+    output.innerText += `Hello, ${name}!\n`;
+    output.innerText += `Your number: ${userNumber}\nBase number: ${BASE_NUMBER}\n`;
+    output.innerText += `Sum: ${sum}, Difference: ${diff}, Product: ${product}, Quotient: ${quotient}\n\n`;
+
+    // 2. Strings & String Methods
+    let sentence = prompt("Enter a short sentence:");
+    output.innerText += `Original: ${sentence}\nUppercase: ${sentence.toUpperCase()}\nLowercase: ${sentence.toLowerCase()}\n\n`;
+
+    // 3. If Statements & Ternary Operator
+    if (userNumber >= 0) {
+      output.innerText += "If statement: Your number is positive.\n";
+    } else {
+      output.innerText += "If statement: Your number is negative.\n";
+    }
+
+    let result = (userNumber >= 0) ? "Ternary: Positive" : "Ternary: Negative";
+    output.innerText += result + "\n\n";
+
+    // 4. Loops
+    output.innerText += `For loop (1 to ${userNumber}):\n`;
+    for (let i = 1; i <= userNumber; i++) {
+      output.innerText += i + " ";
+    }
+    output.innerText += "\n\n";
+
+    output.innerText += "While loop (countdown from 5):\n";
+    let count = 5;
+    while (count > 0) {
+      output.innerText += count + " ";
+      count--;
+    }
+    output.innerText += "\n\n";
+
+    // 5. Functions & Arrays
+    function greetser(name) {
+      return `Hello, ${name}!`;
+    }
+
+    output.innerText += greetser(name) + "\n\n";
+
+    let fruits = [];
+    for (let i = 0; i < 3; i++) {
+      let fruit = prompt(`Enter favorite fruit ${i+1}:`);
+      fruits.push(fruit);
+    }
+    output.innerText += "Your favorite fruits: " + fruits.join(", ");
+  </script>
+</body>
+</html>
